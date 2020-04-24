@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<head>
+    {% block title %}
+        FeedApp - Home
+    {% endblock %}
+    {% block header %}
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
+    {% endblock %}
+</head>
+
+{% block content %}
+    <body>
+
+    <div id="firebaseui-auth-container" hidden="true"></div>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="static/js/fbconfig.js"></script>
+
+    </body>
+{% endblock %}
+
