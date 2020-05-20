@@ -3,3 +3,7 @@ google-cloud-datastore==1.11.0
 google-auth==1.11.2
 requests==2.23.0
 firebase_admin
+xhtml2pdf==0.2.4
+Pillow
+matplotlib
+numpy

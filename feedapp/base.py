@@ -1,5 +1,5 @@
 import google.oauth2.id_token
-from flask import render_template, request, Blueprint, flash, url_for
+from flask import render_template, request, Blueprint, flash
 from google.auth.transport import requests
 
 firebase_request_adapter = requests.Request()

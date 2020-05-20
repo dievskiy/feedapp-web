@@ -1,16 +1,5 @@
 window.ProgressBar = (function (me) {
 
-    document.getElementById('sign-out').hidden = false;
-
-    document.getElementById('sign-out').onclick = function () {
-        // hide login information when user signs out
-        // firebase.initializeApp(firebaseConfig);
-        firebase.auth().signOut().then(() => {
-            window.location.href = '/';
-
-        });
-    };
-
 
     const move = function () {
         element.style.width = width() + '%';
@@ -134,6 +123,14 @@ window.ProgressBar = (function (me) {
 
 window.onload = function () {
 
+    document.getElementById('sign-out').onclick = function () {
+        // hide login information when user signs out
+        firebase.auth().signOut().then(() => {
+            window.location.href = '/';
+
+        });
+    };
+
     const year = 2020;
 
     let options = {
@@ -190,6 +187,7 @@ window.onload = function () {
             }]
     };
 
+    let currentMonth = getInitialMonth();
 
     $("#chartContainer").CanvasJSChart(options);
 
@@ -198,17 +196,29 @@ window.onload = function () {
 
 
     $(".button_month").click(function () {
-        updateMonthData(this.id)
+        if (currentMonth !== this.id) {
+            updateMonthData(this.id);
+            currentMonth = this.id
+        }
     });
+
+
+    $(".button_export").click(function () {
+        if (currentMonth != null) {
+            window.open("/stat/savepdf/".concat(currentMonth), '_blank');
+        } else {
+            alert("Invalid month")
+        }
+    })
 
     function initProgressBar() {
         ProgressBar.init({
             element: document.getElementById('horizontalProgressBar'),
             overlay: document.getElementById('horizontalProgressOverlay'),
-            ratio: 4,				// DEFAULT, YOU CAN SKIP IT
-            speed: 5,				// DEFAULT, YOU CAN SKIP IT
-            frequency: 1,		// DEFAULT, YOU CAN SKIP IT
-            ease: 'ease'		// DEFAULT, YOU CAN SKIP IT
+            ratio: 4,
+            speed: 5,
+            frequency: 1,
+            ease: 'ease'
         });
     }
 
@@ -219,7 +229,7 @@ window.onload = function () {
         if (order > suffixes.length - 1)
             order = suffixes.length - 1;
 
-        var suffix = suffixes[order];
+        const suffix = suffixes[order];
         return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
     }
 

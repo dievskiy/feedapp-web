@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask
 from google.auth.transport import requests
 from google.cloud import datastore
+
 import feedapp.base as base
 import feedapp.stat as stat
 import feedapp.utils as utils

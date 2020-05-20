@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+    <link rel="stylesheet" type="text/css" href="static/pdf.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+<div class="title_container">
+    <img src="https://i.imgur.com/tzKrcFM.png" class="icon"/>
+    <h1 class="title">Nutrition Statistics for {{ month_name }}</h1>
+</div>
+<div class="title_container">
+    <h1 class="title_invisible">
+        A
+    </h1>
+</div>
+<div class="center_container">
+    {{ calories|safe }}
+</div>
+<div class="title_container">
+    <h1 class="other_nutrients title_invisible">A</h1>
+</div>
+<div class="center_container">
+    {{ other_nutrients_image|safe }}
+</div>
+
+</body>
+</html>

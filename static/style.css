@@ -1,5 +1,5 @@
 .button_month {
-    background-color: #008CBA;
+    background-color: #71adf2;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -8,26 +8,13 @@
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
-    border: 2px solid #008CBA;
+    border: 2px solid #71adf2;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.button_login {
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    transition-duration: 0.4s;
-    border: 2px solid #008CBA;
-    border-radius: 4px;
-    cursor: pointer;
-
 }
 
 .grid_container {
+    width: 100%;
     display: grid;
 }
 
@@ -105,27 +92,105 @@
 }
 
 
-html { font-family: sans-serif; background: #eee; padding: 0rem; }
-body { margin: 0 auto; background: white; }
-h1 { font-family: serif; color: #377ba8; margin: 1rem 0; }
+html {
+    font-family: sans-serif;
+    background: #eee;
+    padding: 0rem;
+}
 
-a { color: #377ba8;}
-.content { padding: 0 1rem 1rem; }
-.content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }
-.content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
-.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
-.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
-.post > header > div:first-of-type { flex: auto; }
-.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
-.post .about { color: slategray; font-style: italic; }
-.post .body { white-space: pre-line; }
-.content:last-child { margin-bottom: 0; }
-.content form { margin: 1em 0; display: flex; flex-direction: column; }
-.content label { font-weight: bold; margin-bottom: 0.5em; }
-.content input, .content textarea { margin-bottom: 1em; }
-.content textarea { min-height: 12em; resize: vertical; }
-input.danger { color: #cc2f2e; }
-input[type=submit] { align-self: start; min-width: 10em; }
+body {
+    margin: 0 auto;
+    background: white;
+}
+
+h1 {
+    font-family: serif;
+    color: #377ba8;
+    margin: 1rem 0;
+}
+
+a {
+    color: #377ba8;
+}
+
+.content {
+    padding: 0 1rem 1rem;
+}
+
+.content > header {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: flex-end;
+}
+
+.content > header h1 {
+    flex: auto;
+    margin: 1rem 0 0.25rem 0;
+}
+
+.flash {
+    margin: 1em 0;
+    padding: 1em;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+}
+
+.post > header {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.85em;
+}
+
+.post > header > div:first-of-type {
+    flex: auto;
+}
+
+.post > header h1 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.post .about {
+    color: slategray;
+    font-style: italic;
+}
+
+.post .body {
+    white-space: pre-line;
+}
+
+.content:last-child {
+    margin-bottom: 0;
+}
+
+.content form {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.content input, .content textarea {
+    margin-bottom: 1em;
+}
+
+.content textarea {
+    min-height: 12em;
+    resize: vertical;
+}
+
+input.danger {
+    color: #cc2f2e;
+}
+
+input[type=submit] {
+    align-self: start;
+    min-width: 10em;
+}
 
 .logged_in {
     display: flex;
@@ -133,3 +198,74 @@ input[type=submit] { align-self: start; min-width: 10em; }
     margin-top: 1rem;
 }
 
+
+.button_export_container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.button_export {
+    background-color: #f8d6a4;
+    border: none;
+    color: dimgray;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border: 2px solid #f8d6a4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button_export:hover {
+    background-color: #fff;
+    color: black;
+}
+
+header {
+    position: relative;
+}
+
+table {
+    table-layout: fixed;
+}
+
+.table_month_buttons {
+    border-collapse: collapse;
+    justify-content: center;
+    display: flex;
+}
+
+.news_box_mobile {
+    display: none;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: left;
+}
+
+.news_box_desktop {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    float: right;
+    text-align: left;
+}
+
+@media only screen and (max-width: 470px) {
+    .button_month{
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .button_month{
+        padding: 10px 8px;
+    }
+}

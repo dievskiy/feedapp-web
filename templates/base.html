@@ -1,17 +1,19 @@
 <!doctype html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"/>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header-login-signup.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
+    {% block header %}
+    {% endblock %}
 </head>
 
+<body>
 
-{% block header %}{% endblock %}
-<header class="header-login-signup">
+<div class="header-login-signup">
 
     <div class="header-limiter">
 
@@ -21,24 +23,21 @@
             <a href="/">Home</a>
             <a href="/stat">Statistics</a>
         </nav>
-
         <ul>
-            <li><a id="login-info">{{ name }}</a></li>
-            <li><a id="sign-out" hidden="false">Sign out</a></li>
+            <li><a id="login-info" class="login-info">{{ name }}</a></li>
+            <li><a id="sign-out">Sign out</a></li>
         </ul>
 
     </div>
 
-</header>
 
-<body>
+</div>
 
-</body>
 
 <section class="content">
-
     {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
     {% endfor %}
     {% block content %}{% endblock %}
 </section>
+</body>

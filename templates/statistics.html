@@ -13,18 +13,26 @@
 {% block content %}
     <div class="grid_container">
         <div class="grid_first center_wrapper button_month_container">
-            {% for month in months %}
-                <button formaction="{{ url_for('stat.month', id=month) }}" formmethod="get" type="submit"
-                        class="button_month"
-                        id="{{ month }}">
-                    {{ get_name_for_month(month) }}
-                </button>
-            {% endfor %}
+            <table class="table_month_buttons">
+                {% for month in months %}
+                    <td>
+                        <button class="button_month" id="{{ month }}">
+                            {{ get_name_for_month(month) }}
+                        </button>
+                    </td>
+                {% endfor %}
+            </table>
         </div>
     </div>
     <div class="grid_second center_wrapper">
         <div id="chartContainer"></div>
     </div>
+    <div class="button_export_container">
+        <button class="button_export">
+            Save PDF
+        </button>
+    </div>
+
 
 
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
