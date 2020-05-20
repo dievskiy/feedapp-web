@@ -7,6 +7,8 @@ application is deployed to the Google Cloud as an App Engine.
 
 demo account: sign in with eamil -> demo@example.com : 123456
 
+![alt text](https://i.imgur.com/N8LOlfC.png)
+
    [gp]: <https://github.com/dievskiy/feedapp>
    [wa]: <https://feedapp-85670.appspot.com>
   
