@@ -22,10 +22,11 @@
         <nav>
             <a href="/">Home</a>
             <a href="/stat">Statistics</a>
+            <a href="/privacy">Privacy Policy</a>
         </nav>
-        <ul>
+        <ul style="visibility: {{ sign_out_visibility }}">
             <li><a id="login-info" class="login-info">{{ name }}</a></li>
-            <li><a id="sign-out">Sign out</a></li>
+            <li><a id="sign-out"> Sign out</a></li>
         </ul>
 
     </div>
@@ -41,3 +42,4 @@
     {% block content %}{% endblock %}
 </section>
 </body>
+
